@@ -17,10 +17,21 @@ public class PrintArrayTest {
         printArray=new PrintArray();
     }
 
+    //UseCase-1
+    //TC:1.1
     @Test
     public void  givenArray_ShouldPrintArray() {
         Assert.assertTrue(printArray.toPrint(arrInteger));
         Assert.assertTrue(printArray.toPrint(arrDouble));
         Assert.assertTrue(printArray.toPrint(arrCharacter));
+    }
+
+    //UseCase-2
+    //TC:2.1
+    @Test
+    public void  givenArrayToConstructor_ShouldPrintArray(){
+        Assert.assertTrue(new PrintArray<Integer>(arrInteger).toPrint());
+        Assert.assertTrue(new PrintArray<Double>(arrDouble).toPrint());
+        Assert.assertTrue(new PrintArray<Character>(arrCharacter).toPrint());
     }
 }

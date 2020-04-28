@@ -1,28 +1,42 @@
 package com.printarray.demo;
 
-public class PrintArray {
+public class PrintArray <T> {
+    T[] myArray;
 
     public PrintArray() {
 
     }
-    public static boolean toPrint(Integer [] arr) {
-        for(Integer i: arr) {
+
+    public PrintArray(T[] myArray) {
+        this.myArray = myArray;
+    }
+
+    public static <T> boolean toPrint(T[] arr) {
+        for (T i : arr)
             System.out.println(i);
-        }
+        return true;
+    }
+
+    public boolean toPrint() {
+        return toPrint(myArray);
+    }
+}
+
+    /*public static boolean toPrint(Integer [] arr) {
+        for(Integer i: arr)
+            System.out.println(i);
         return true;
     }
 
     public static  boolean toPrint(Double [] arr) {
-        for(Double i: arr) {
+        for(Double i: arr)
             System.out.println(i);
-        }
         return true;
     }
 
     public static boolean toPrint(Character [] arr) {
-        for(Character i: arr) {
+        for(Character i: arr)
             System.out.println(i);
-        }
-        return true;
+         return true;
     }
-}
+}*/
